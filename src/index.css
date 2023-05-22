@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.fab-bg {
+  background-color: #F7FAFC;
+  /* This is the RGB value for Tailwind's gray-100 */
+}
