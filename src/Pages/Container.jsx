@@ -235,6 +235,7 @@ const TextContainer = ({ width, height, placeholder }) => {
       console.log("After format change:", isBoldAfter);
     }
   };
+  // function to apply underline under selected text
   const applyUnderlineFormatting = () => {
     const quill = quillRef.current.getEditor();
     const selection = quill.getSelection();
@@ -250,6 +251,7 @@ const TextContainer = ({ width, height, placeholder }) => {
       console.log("After format change:", isUnderlinedAfter);
     }
   };
+  // function to apply italic style on selected content
   const applyItalicFormatting = () => {
     const quill = quillRef.current.getEditor();
     const selection = quill.getSelection();
@@ -266,7 +268,7 @@ const TextContainer = ({ width, height, placeholder }) => {
     }
   };
 
-  // Function to handle content changes in the quill editor
+  // Function to handle content changes in the quill editor means changing the value of container
   const handleChange = (value) => {
     setContent(value);
     console.log(value);
@@ -279,7 +281,9 @@ const TextContainer = ({ width, height, placeholder }) => {
       {showColorPalette && <ColorPalette />}
       {showHighlightPalette && <HighlightPalette />}
       <ReactQuill
+        // providing reference for ReactQuill 
         ref={quillRef}
+        // setting the value of ReactQuill
         value={content}
         onChange={handleChange}
         modules={{
